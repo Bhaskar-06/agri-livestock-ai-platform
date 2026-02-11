@@ -67,6 +67,186 @@ index.html
     <p>Coming soon: Buying/selling, vet services, price tracking</p>
   </section>
 </main>
+<body>
+  <header>
+    <h1>🌾 किसान और पशु पालन मंच</h1>
+    <h2>Agri & Livestock AI Platform</h2>
+    <p>खेती और पशुपालन के लिए AI सहायक | AI Helper for Farming & Livestock</p>
+  </header>
+
+  <main>
+    <!-- Farmer Details Section -->
+    <section id="farmer-details">
+      <h2>👨‍🌾 किसान विवरण | Farmer Details</h2>
+      <form id="farmerForm">
+        <label for="farmerName">आपका नाम | Your Name:</label>
+        <input type="text" id="farmerName" placeholder="नाम लिखें" required />
+        
+        <label for="acres">कुल ज़मीन (एकड़) | Total Land (Acres):</label>
+        <input type="number" id="acres" min="0" max="1000" placeholder="जैसे: 5" required />
+        
+        <label for="crops">मुख्य फसलें | Main Crops:</label>
+        <select id="crops" multiple required>
+          <option value="wheat">गेहूं | Wheat</option>
+          <option value="rice">धान | Rice</option>
+          <option value="cotton">कपास | Cotton</option>
+          <option value="vegetables">सब्ज़ी | Vegetables</option>
+          <option value="sugarcane">गन्ना | Sugarcane</option>
+          <option value="maize">मक्का | Maize</option>
+        </select>
+        <small>कई फसलें चुनने के लिए Ctrl दबाकर रखें</small>
+        
+        <label for="pestIssue">कीट समस्या | Pest Problem:</label>
+        <textarea id="pestIssue" placeholder="जैसे: पत्ती पीली हो रही है, छेद हैं..."></textarea>
+        
+        <button type="submit">✅ समाधान पाएं | Get Solution</button>
+      </form>
+      
+      <div id="aiResult"></div>
+    </section>
+
+    <!-- Livestock Marketplace -->
+    <section id="livestock">
+      <h2>🐄 पशु बाजार | Livestock Marketplace</h2>
+      
+      <div class="livestock-tabs">
+        <button onclick="showTab('buy')" class="tab-btn active">खरीदें | Buy</button>
+        <button onclick="showTab('sell')" class="tab-btn">बेचें | Sell</button>
+        <button onclick="showTab('vet')" class="tab-btn">डॉक्टर | Vet</button>
+        <button onclick="showTab('prices')" class="tab-btn">कीमत | Prices</button>
+      </div>
+
+      <!-- Buy Tab -->
+      <div id="buyTab" class="tab-content active">
+        <h3>पशु खरीदें | Buy Animals</h3>
+        <div class="livestock-grid">
+          <div class="livestock-card">
+            <h4>🐮 दुधारू गाय | Milch Cow</h4>
+            <p><strong>कीमत:</strong> ₹40,000 - ₹80,000</p>
+            <p><strong>दूध:</strong> 15-20 लीटर/दिन</p>
+            <p><strong>स्थान:</strong> जयपुर, राजस्थान</p>
+            <button class="buy-btn" onclick="contactSeller('गाय', '9876543210')">संपर्क करें</button>
+          </div>
+          
+          <div class="livestock-card">
+            <h4>🐃 भैंस | Buffalo</h4>
+            <p><strong>कीमत:</strong> ₹60,000 - ₹1,20,000</p>
+            <p><strong>दूध:</strong> 10-15 लीटर/दिन</p>
+            <p><strong>स्थान:</strong> जयपुर, राजस्थान</p>
+            <button class="buy-btn" onclick="contactSeller('भैंस', '9876543211')">संपर्क करें</button>
+          </div>
+          
+          <div class="livestock-card">
+            <h4>🐐 बकरी | Goat</h4>
+            <p><strong>कीमत:</strong> ₹8,000 - ₹15,000</p>
+            <p><strong>वजन:</strong> 30-40 kg</p>
+            <p><strong>स्थान:</strong> जयपुर, राजस्थान</p>
+            <button class="buy-btn" onclick="contactSeller('बकरी', '9876543212')">संपर्क करें</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sell Tab -->
+      <div id="sellTab" class="tab-content">
+        <h3>पशु बेचें | Sell Animals</h3>
+        <form id="sellForm">
+          <label>पशु का प्रकार | Animal Type:</label>
+          <select id="animalType" required>
+            <option value="cow">गाय | Cow</option>
+            <option value="buffalo">भैंस | Buffalo</option>
+            <option value="goat">बकरी | Goat</option>
+            <option value="sheep">भेड़ | Sheep</option>
+          </select>
+          
+          <label>कीमत (₹) | Price:</label>
+          <input type="number" id="price" placeholder="जैसे: 50000" required />
+          
+          <label>आपका मोबाइल | Your Mobile:</label>
+          <input type="tel" id="mobile" placeholder="10 अंक" maxlength="10" required />
+          
+          <button type="submit">बेचने के लिए पोस्ट करें</button>
+        </form>
+      </div>
+
+      <!-- Vet Tab -->
+      <div id="vetTab" class="tab-content">
+        <h3>पशु चिकित्सक | Veterinary Services</h3>
+        <div class="vet-list">
+          <div class="vet-card">
+            <h4>Dr. राजेश शर्मा</h4>
+            <p>📍 मालवीय नगर, जयपुर</p>
+            <p>📞 9898989898</p>
+            <p>⏰ 9 AM - 6 PM</p>
+            <button class="vet-btn" onclick="alert('कॉल करें: 9898989898')">अपॉइंटमेंट लें</button>
+          </div>
+          
+          <div class="vet-card">
+            <h4>Dr. प्रिया वर्मा</h4>
+            <p>📍 वैशाली नगर, जयपुर</p>
+            <p>📞 9797979797</p>
+            <p>⏰ 8 AM - 8 PM | 24x7 इमरजेंसी</p>
+            <button class="vet-btn" onclick="alert('कॉल करें: 9797979797')">अपॉइंटमेंट लें</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prices Tab -->
+      <div id="pricesTab" class="tab-content">
+        <h3>आज के भाव | Today's Prices</h3>
+        <table class="price-table">
+          <tr>
+            <th>पशु | Animal</th>
+            <th>न्यूनतम | Min</th>
+            <th>अधिकतम | Max</th>
+            <th>औसत | Avg</th>
+          </tr>
+          <tr>
+            <td>🐮 गाय | Cow</td>
+            <td>₹40,000</td>
+            <td>₹80,000</td>
+            <td>₹60,000</td>
+          </tr>
+          <tr>
+            <td>🐃 भैंस | Buffalo</td>
+            <td>₹60,000</td>
+            <td>₹1,20,000</td>
+            <td>₹90,000</td>
+          </tr>
+          <tr>
+            <td>🐐 बकरी | Goat</td>
+            <td>₹8,000</td>
+            <td>₹15,000</td>
+            <td>₹12,000</td>
+          </tr>
+          <tr>
+            <td>🐑 भेड़ | Sheep</td>
+            <td>₹5,000</td>
+            <td>₹10,000</td>
+            <td>₹7,500</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- AI Chatbot for Farmers -->
+    <section id="ai-chatbot">
+      <h2>🤖 AI सहायक | AI Helper</h2>
+      <p>कोई भी सवाल पूछें | Ask any question in Hindi or English</p>
+      <div id="chatbox">
+        <div id="chatMessages">
+          <div class="bot-message">नमस्ते! मैं आपकी मदद के लिए हूं। खेती या पशुपालन के बारे में पूछें।</div>
+        </div>
+        <div class="chat-input-area">
+          <input type="text" id="chatInput" placeholder="यहाँ लिखें... या 🎤 बोलें" />
+          <button onclick="sendMessage()">भेजें</button>
+          <button onclick="startVoiceInput()" class="voice-btn">🎤</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 
 
 
