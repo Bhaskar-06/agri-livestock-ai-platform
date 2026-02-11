@@ -1,0 +1,75 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agri & Livestock AI Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Agri & Livestock AI Platform</h1>
+  <p>Welcome! This site supports farmers and livestock owners using AI.</p>
+    <header>
+  <h1>Agri & Livestock AI Platform</h1>
+  <p>Advancing agriculture and animal husbandry using AI.</p>
+</header>
+
+<section id="farmer-details">
+  <h2>Farmer Details</h2>
+  <!-- Form for acres, crops, pest issues -->
+</section>
+
+<section id="livestock-market">
+  <h2>Livestock Marketplace</h2>
+  <!-- Buying/selling, prices -->
+</section>
+
+<section id="veterinary">
+  <h2>Veterinary Services</h2>
+  <!-- Vet booking, health records -->
+</section>
+<header>
+  <h1>🌾 Agri & Livestock AI Platform</h1>
+  <p>AI‑powered solutions for farmers and livestock owners</p>
+</header>
+
+<main>
+  <!-- Farmer Details Section -->
+  <section id="farmer-details">
+    <h2>👨‍🌾 Farmer Details</h2>
+    <form id="farmerForm">
+      <label for="farmerName">Farmer Name:</label>
+      <input type="text" id="farmerName" placeholder="Enter your name" required />
+      
+      <label for="acres">Total Acres:</label>
+      <input type="number" id="acres" min="0" max="1000" placeholder="e.g. 25" required />
+      
+      <label for="crops">Main Crops:</label>
+      <select id="crops" multiple required>
+        <option value="wheat">Wheat</option>
+        <option value="rice">Rice</option>
+        <option value="cotton">Cotton</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="sugarcane">Sugarcane</option>
+        <option value="maize">Maize</option>
+      </select>
+      
+      <label for="pestIssue">Current Pest Issue:</label>
+      <textarea id="pestIssue" placeholder="Describe pest/disease symptoms..."></textarea>
+      
+      <button type="submit">Get AI Recommendations</button>
+    </form>
+  </section>
+
+  <!-- Livestock Section (coming next) -->
+  <section id="livestock">
+    <h2>🐄 Livestock Management</h2>
+    <p>Coming soon: Buying/selling, vet services, price tracking</p>
+  </section>
+</main>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
